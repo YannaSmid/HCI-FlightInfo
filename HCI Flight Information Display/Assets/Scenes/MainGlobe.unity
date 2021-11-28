@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16858605, g: 0.17157283, b: 0.1621308, a: 1}
+  m_IndirectSpecularColor: {r: 0.17876378, g: 0.16017088, b: 0.16426992, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1152,7 +1152,7 @@ Transform:
   - {fileID: 1925964744}
   - {fileID: 1020742381}
   m_Father: {fileID: 1392090273}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &237495162
 GameObject:
@@ -5908,7 +5908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1336654732}
   m_Layer: 0
-  m_Name: ===AIRPORTS====
+  m_Name: Airports
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5922,13 +5922,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336654731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 287.4342, y: 164.88971, z: -76.31379}
+  m_LocalPosition: {x: 294.8487, y: 164.3439, z: -74.97361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 44884950}
   - {fileID: 610110663}
-  m_Father: {fileID: 1392090273}
-  m_RootOrder: 1
+  m_Father: {fileID: 67160935}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1337652914 stripped
 GameObject:
@@ -6188,8 +6188,6 @@ Transform:
   m_LocalPosition: {x: 7.414475, y: 1.0941939, z: 1.921175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3801856778573135439}
-  - {fileID: 1336654732}
   - {fileID: 236213640}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -7044,11 +7042,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9019006412969798609, guid: 6d42eedfbd1beeb4fac74906c8c92a80, type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Globe Display
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019006412969798612, guid: 6d42eedfbd1beeb4fac74906c8c92a80, type: 3}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9019006412969798612, guid: 6d42eedfbd1beeb4fac74906c8c92a80, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9019006412969798614, guid: 6d42eedfbd1beeb4fac74906c8c92a80, type: 3}
       propertyPath: m_UseGravity
@@ -10356,12 +10358,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3801856778573135440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.249, y: 0.987, z: -1.43}
+  m_LocalPosition: {x: 0.16547489, y: 0.44119397, z: -0.089824975}
   m_LocalScale: {x: 0.22222224, y: 0.22222224, z: 0.22222224}
   m_Children:
   - {fileID: 3801856779203748560}
-  m_Father: {fileID: 1392090273}
-  m_RootOrder: 0
+  m_Father: {fileID: 67160935}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3801856778573135440
 GameObject:
@@ -10373,7 +10375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3801856778573135439}
   m_Layer: 0
-  m_Name: ====PATHS====
+  m_Name: Paths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
