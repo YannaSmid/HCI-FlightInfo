@@ -5,10 +5,16 @@ using UnityEngine;
 public class PointedRoute : MonoBehaviour
 {
     public Object Route;
+    public GameObject FlightInfo;
     public Color SelectedColor;
     public Color DefaultColor;
     public Renderer RouteRenderer;
     public bool pointed = false;
+
+    private bool selected = false;
+
+    private float countdown;
+    public float pointtime = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,20 +27,30 @@ public class PointedRoute : MonoBehaviour
     void Update()
     {
         if (pointed){
-            
-            
+            countdown -= 1f;
+        }
+        if (countdown < 0f){
+            selected = true;
+            FlightInfo.SetActive(true);
         }
     }
 
     public void Pointed(){
-        pointed = true;
-        RouteRenderer.material.color = SelectedColor;
-        Debug.Log("Pointed");
+
+        if (!selected){
+            pointed = true;
+            countdown = pointtime;
+            RouteRenderer.material.color = SelectedColor;
+            Debug.Log("Pointed");
+        }
     }
 
     public void NotPointed(){
-        pointed = false;
-        RouteRenderer.material.color = DefaultColor;
+
+        if (!selected){
+            pointed = false;
+            RouteRenderer.material.color = DefaultColor;
+        }
     }
 
 }
