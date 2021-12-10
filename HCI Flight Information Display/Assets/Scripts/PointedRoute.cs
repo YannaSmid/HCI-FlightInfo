@@ -9,7 +9,9 @@ public class PointedRoute : MonoBehaviour
     public Color SelectedColor;
     public Color DefaultColor;
     public Renderer RouteRenderer;
-    public bool pointed = false;
+    bool pointselect = false;
+
+    bool pointundo = false;
 
     private bool selected = false;
 
@@ -26,30 +28,51 @@ public class PointedRoute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pointed){
+        if (pointselect && countdown > 0f && !selected){
             countdown -= 1f;
         }
-        if (countdown < 0f){
+        //selecteren
+        else if (pointselect && countdown <= 0f && !selected){
             selected = true;
+            pointselect = false;
             FlightInfo.SetActive(true);
+        }
+        if (pointundo && countdown > 0f && selected){
+            countdown -= 1f;
+        }
+        //deselecteren
+        else if(pointundo && countdown <= 0f && selected){
+            selected = false;
+            pointundo = false;
+            FlightInfo.SetActive(false);
         }
     }
 
     public void Pointed(){
-
+    //kan alleen geselecteerd worden als die nog niet geselecteerd is
         if (!selected){
-            pointed = true;
+            pointselect = true;
             countdown = pointtime;
             RouteRenderer.material.color = SelectedColor;
+            //Debug.Log("Pointed");
+        }
+    //als die al geselecteerd is moet dat ongedaan gemaakt kunnen worden
+        else if (selected){
+            pointundo = true;
+            countdown = pointtime;
+            RouteRenderer.material.color = DefaultColor;
             Debug.Log("Pointed");
         }
     }
 
     public void NotPointed(){
-
         if (!selected){
-            pointed = false;
+            pointselect = false;
             RouteRenderer.material.color = DefaultColor;
+        }
+        else if (selected){
+            pointundo = false;
+            RouteRenderer.material.color = SelectedColor;
         }
     }
 
