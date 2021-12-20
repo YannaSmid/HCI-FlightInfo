@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17876378, g: 0.16017088, b: 0.16426992, a: 1}
+  m_IndirectSpecularColor: {r: 0.16858605, g: 0.17157283, b: 0.1621308, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5455,6 +5455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelHandlerObject: {fileID: 0}
   Route: {fileID: 1008279947}
   FlightInfo: {fileID: 0}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
@@ -5656,6 +5657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelHandlerObject: {fileID: 0}
   Route: {fileID: 1050374361}
   FlightInfo: {fileID: 0}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
@@ -6996,6 +6998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelHandlerObject: {fileID: 0}
   Route: {fileID: 1108091079}
   FlightInfo: {fileID: 0}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
@@ -10172,7 +10175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1797790634
 Transform:
   m_ObjectHideFlags: 0
@@ -14811,6 +14814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelHandlerObject: {fileID: 0}
   Route: {fileID: 3801856779203748561}
   FlightInfo: {fileID: 1797790633}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
