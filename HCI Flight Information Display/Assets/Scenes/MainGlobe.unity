@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16858605, g: 0.17157283, b: 0.1621308, a: 1}
+  m_IndirectSpecularColor: {r: 0.17876378, g: 0.16017088, b: 0.16426992, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1217,7 +1217,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1840639428}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &239010184
 GameObject:
@@ -3908,6 +3908,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704983554}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &710559155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710559156}
+  - component: {fileID: 710559157}
+  m_Layer: 0
+  m_Name: SelectionHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &710559156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710559155}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.98517245, y: 1.4562888, z: 0.98608327}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1840639428}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710559157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710559155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0a3ec99c78f434294ce5564bc4c86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RouteisSelected: 0
 --- !u!1 &726671797
 GameObject:
   m_ObjectHideFlags: 0
@@ -5455,13 +5499,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelHandlerObject: {fileID: 0}
+  SelHandlerObject: {fileID: 710559157}
   Route: {fileID: 1008279947}
-  FlightInfo: {fileID: 0}
+  FlightInfo: {fileID: 178031929}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
   DefaultColor: {r: 0.3018868, g: 0.3007476, b: 0.3007476, a: 0}
   RouteRenderer: {fileID: 1008279950}
-  pointtime: 5
+  pointtime: 40
 --- !u!120 &1008279950
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5657,13 +5701,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelHandlerObject: {fileID: 0}
+  SelHandlerObject: {fileID: 710559157}
   Route: {fileID: 1050374361}
-  FlightInfo: {fileID: 0}
+  FlightInfo: {fileID: 1153966274}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
   DefaultColor: {r: 0.3018868, g: 0.3007476, b: 0.3007476, a: 0}
   RouteRenderer: {fileID: 1050374364}
-  pointtime: 5
+  pointtime: 40
 --- !u!120 &1050374364
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -6998,13 +7042,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelHandlerObject: {fileID: 0}
+  SelHandlerObject: {fileID: 710559157}
   Route: {fileID: 1108091079}
-  FlightInfo: {fileID: 0}
+  FlightInfo: {fileID: 373535869}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
   DefaultColor: {r: 0.3018868, g: 0.3007476, b: 0.3007476, a: 0}
   RouteRenderer: {fileID: 1108091082}
-  pointtime: 5
+  pointtime: 40
 --- !u!120 &1108091082
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -10175,7 +10219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1797790634
 Transform:
   m_ObjectHideFlags: 0
@@ -10474,6 +10518,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 710559156}
   - {fileID: 8216697210969087798}
   - {fileID: 237495164}
   m_Father: {fileID: 0}
@@ -13553,6 +13598,9 @@ GameObject:
   - component: {fileID: 4076338532857761}
   - component: {fileID: 114961214202327905}
   - component: {fileID: 1819909756747120}
+  - component: {fileID: 1819909756747126}
+  - component: {fileID: 1819909756747125}
+  - component: {fileID: 1819909756747123}
   - component: {fileID: 1819909756747121}
   - component: {fileID: 1819909756747122}
   - component: {fileID: 1819909756747124}
@@ -13610,7 +13658,7 @@ MonoBehaviour:
   FingerName: 1
   PointingType: 3
   PointingDirection: {x: 0, y: 0, z: 1}
-  TargetObject: {fileID: 239010185}
+  TargetObject: {fileID: 610110663}
   OnAngle: 20.4
   OffAngle: 26.8
   ShowGizmos: 1
@@ -13699,6 +13747,57 @@ MonoBehaviour:
   ShowGizmos: 1
   ActivateDistance: 0.03
   DeactivateDistance: 0.04
+--- !u!114 &1819909756747123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819909756747119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b77174815b904166ad047382f534c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1108091081}
+        m_TargetAssemblyTypeName: PointedRoute, Assembly-CSharp
+        m_MethodName: Pointed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1108091081}
+        m_TargetAssemblyTypeName: PointedRoute, Assembly-CSharp
+        m_MethodName: NotPointed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Period: 0.1
+  HandModel: {fileID: 6203820390713528148}
+  FingerName: 1
+  PointingType: 3
+  PointingDirection: {x: 0, y: 0, z: 1}
+  TargetObject: {fileID: 726671798}
+  OnAngle: 20.4
+  OffAngle: 26.8
+  ShowGizmos: 1
 --- !u!54 &1819909756747124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13715,6 +13814,108 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1819909756747125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819909756747119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b77174815b904166ad047382f534c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1050374363}
+        m_TargetAssemblyTypeName: PointedRoute, Assembly-CSharp
+        m_MethodName: Pointed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1050374363}
+        m_TargetAssemblyTypeName: PointedRoute, Assembly-CSharp
+        m_MethodName: NotPointed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Period: 0.1
+  HandModel: {fileID: 6203820390713528148}
+  FingerName: 1
+  PointingType: 3
+  PointingDirection: {x: 0, y: 0, z: 1}
+  TargetObject: {fileID: 599979533}
+  OnAngle: 20.4
+  OffAngle: 26.8
+  ShowGizmos: 1
+--- !u!114 &1819909756747126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819909756747119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b77174815b904166ad047382f534c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1008279949}
+        m_TargetAssemblyTypeName: PointedRoute, Assembly-CSharp
+        m_MethodName: Pointed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1008279949}
+        m_TargetAssemblyTypeName: PointedRoute, Assembly-CSharp
+        m_MethodName: NotPointed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Period: 0.1
+  HandModel: {fileID: 6203820390713528148}
+  FingerName: 1
+  PointingType: 3
+  PointingDirection: {x: 0, y: 0, z: 1}
+  TargetObject: {fileID: 1787616903}
+  OnAngle: 20.4
+  OffAngle: 26.8
+  ShowGizmos: 1
 --- !u!4 &4076338532857761
 Transform:
   m_ObjectHideFlags: 0
@@ -14814,13 +15015,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc27e7d5aabe35b4aa48f47a17db1ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelHandlerObject: {fileID: 0}
+  SelHandlerObject: {fileID: 710559157}
   Route: {fileID: 3801856779203748561}
   FlightInfo: {fileID: 1797790633}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
   DefaultColor: {r: 0.3018868, g: 0.3007476, b: 0.3007476, a: 0}
   RouteRenderer: {fileID: 3801856779203748559}
-  pointtime: 15
+  pointtime: 40
 --- !u!114 &6203820390713528148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17054,7 +17255,7 @@ Transform:
   - {fileID: 1078460518}
   - {fileID: 613720016}
   m_Father: {fileID: 1840639428}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8216697210969087799
 GameObject:
