@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PointedRoute : MonoBehaviour
 {
-    public RouteSelectionHandler SelHandlerObject;
-
-    private RouteSelectionHandler SelChecker;
-
     public Object Route;
     public GameObject FlightInfo;
     public Color SelectedColor;
@@ -24,10 +20,9 @@ public class PointedRoute : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SelChecker = SelHandlerObject.GetComponent<RouteSelectionHandler>();
-        RouteRenderer = GetComponent<Renderer>();
-        SelectedColor = new Color(255,246,0);
-        DefaultColor = RouteRenderer.material.color;
+       RouteRenderer = GetComponent<Renderer>();
+       SelectedColor = new Color(255,246,0);
+       DefaultColor = RouteRenderer.material.color;
     }
 
     // Update is called once per frame
@@ -39,7 +34,6 @@ public class PointedRoute : MonoBehaviour
         //selecteren
         else if (pointselect && countdown <= 0f && !selected){
             selected = true;
-            SelChecker.RouteisSelected = true;
             pointselect = false;
             FlightInfo.SetActive(true);
         }
@@ -49,30 +43,26 @@ public class PointedRoute : MonoBehaviour
         //deselecteren
         else if(pointundo && countdown <= 0f && selected){
             selected = false;
-            SelChecker.RouteisSelected = false;
             pointundo = false;
             FlightInfo.SetActive(false);
         }
     }
 
     public void Pointed(){
-    //als er niet ergens een route is geselecteerd
-        if (!SelChecker.RouteisSelected){
-        //kan alleen geselecteerd worden als die nog niet geselecteerd is
-            if (!selected){
-                pointselect = true;
-                countdown = pointtime;
-                RouteRenderer.material.color = SelectedColor;
-                //Debug.Log("Pointed");
-            }
+    //kan alleen geselecteerd worden als die nog niet geselecteerd is
+        if (!selected){
+            pointselect = true;
+            countdown = pointtime;
+            RouteRenderer.material.color = SelectedColor;
+            //Debug.Log("Pointed");
         }
-        //als route al geselecteerd is moet dat ongedaan gemaakt kunnen worden
-            else if (selected){
-                pointundo = true;
-                countdown = pointtime;
-                RouteRenderer.material.color = DefaultColor;
-                Debug.Log("Pointed");
-            }
+    //als die al geselecteerd is moet dat ongedaan gemaakt kunnen worden
+        else if (selected){
+            pointundo = true;
+            countdown = pointtime;
+            RouteRenderer.material.color = DefaultColor;
+            Debug.Log("Pointed");
+        }
     }
 
     public void NotPointed(){
