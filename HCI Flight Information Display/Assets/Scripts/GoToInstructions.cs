@@ -9,8 +9,6 @@ public class GoToInstructions : MonoBehaviour
     private float countdown;
     private bool isPointed = false;
 
-    public GameObject StartText;
-
     void Update(){
         
         if (isPointed && countdown >= 0f){
@@ -22,17 +20,16 @@ public class GoToInstructions : MonoBehaviour
 
     }
     
-    public void StartMainScene(){
+    public void StartInstructions(){
 
         isPointed = true;
         countdown = pointtime;
-        StartText.SetActive(true);
         
     }
 
-    public void CutOffStart(){
+    public void CutOffInstructions(){
 
         isPointed = false;
-        StartText.SetActive(false);
+
     }
 }
