@@ -74,11 +74,13 @@ public class PointedRoute : MonoBehaviour
 
      //als er niet ergens een route is geselecteerd
     public void Pointed(){
-        if (!SelChecker.RouteisSelected)
+        //als er nog geen andere route is geselecteerd
+        if (!SelChecker.RouteisSelected && !SelChecker.SelectingRoute)
         {
         //kan alleen geselecteerd worden als die nog niet geselecteerd is
             if (!selected)
             {
+                SelChecker.SelectingRoute = true;
                 pointselect = true;
                 countdown = pointtime;
                 RouteRenderer.material.color = SelectedColor;
@@ -86,7 +88,7 @@ public class PointedRoute : MonoBehaviour
             }
         }
         //als route al geselecteerd is moet dat ongedaan gemaakt kunnen worden
-            else if (selected)
+        if (selected)
             {
                 pointundo = true;
                 countdown = pointtime;
@@ -98,10 +100,12 @@ public class PointedRoute : MonoBehaviour
     public void NotPointed(){
         if (!selected){
             pointselect = false;
+            SelChecker.SelectingRoute = false;
             RouteRenderer.material.color = DefaultColor;
         }
         else if (selected){
             pointundo = false;
+            SelChecker.SelectingRoute = false;
             RouteRenderer.material.color = SelectedColor;
         }
     }
