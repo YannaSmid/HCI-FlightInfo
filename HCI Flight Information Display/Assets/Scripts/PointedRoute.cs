@@ -91,6 +91,7 @@ public class PointedRoute : MonoBehaviour
         if (selected)
             {
                 pointundo = true;
+                SelHandlerObject.Deselecting = true;//voor progress bar moet je ook bij deselecteren een bar krijgen
                 countdown = pointtime;
                 RouteRenderer.material.color = DefaultColor;
                 Debug.Log("Pointed");
@@ -105,6 +106,7 @@ public class PointedRoute : MonoBehaviour
         }
         else if (selected){
             pointundo = false;
+            SelHandlerObject.Deselecting = false; //voor progress bar moet je ook bij deselecteren een bar krijgen
             SelChecker.SelectingRoute = false;
             RouteRenderer.material.color = SelectedColor;
         }
