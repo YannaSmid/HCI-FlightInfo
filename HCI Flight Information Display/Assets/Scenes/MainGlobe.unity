@@ -385,6 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 52563583}
   - component: {fileID: 52563584}
+  - component: {fileID: 52563585}
   m_Layer: 0
   m_Name: Homebutton
   m_TagString: Untagged
@@ -400,7 +401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52563582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6869998, y: 0.546, z: 0.29117513}
+  m_LocalPosition: {x: 0.745, y: 0.018, z: 0.29117513}
   m_LocalScale: {x: 0.017, y: 0.015, z: 1}
   m_Children: []
   m_Father: {fileID: 236213640}
@@ -457,6 +458,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &52563585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52563582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454cfc91241fa284c93beb6d416b83c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointtime: 30
+  Icon: {fileID: 52563584}
+  SelectedColor: {r: 0.75686276, g: 1, b: 1, a: 1}
+  DefaultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &67160935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9019006412969798608, guid: 6d42eedfbd1beeb4fac74906c8c92a80, type: 3}
@@ -2000,7 +2017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointtime: 30
   Icon: {fileID: 258909134}
-  SelectedColor: {r: 0, g: 1, b: 0.5868015, a: 1}
+  SelectedColor: {r: 0.58113205, g: 1, b: 0.827525, a: 1}
   DefaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &258909134
 SpriteRenderer:
@@ -2061,7 +2078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258909132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.682, y: 0.218, z: 0.27}
+  m_LocalPosition: {x: -0.682, y: 0.005, z: 0.27}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 236213640}
@@ -14970,7 +14987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.93606865, b: 0.2980392, a: 0.9607843}
+  m_Color: {r: 0.34528303, g: 1, b: 0.43977836, a: 0.9607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15163,6 +15180,7 @@ GameObject:
   - component: {fileID: 1819909756747122}
   - component: {fileID: 1819909756747124}
   - component: {fileID: 1819909756747128}
+  - component: {fileID: 1819909756747129}
   m_Layer: 0
   m_Name: Interaction Hand (Right)
   m_TagString: Untagged
@@ -15718,8 +15736,83 @@ MonoBehaviour:
   PointingType: 3
   PointingDirection: {x: 0, y: 0, z: 1}
   TargetObject: {fileID: 258909135}
-  OnAngle: 32
-  OffAngle: 32
+  OnAngle: 23.9
+  OffAngle: 34.6
+  ShowGizmos: 1
+--- !u!114 &1819909756747129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819909756747119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b77174815b904166ad047382f534c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 52563585}
+        m_TargetAssemblyTypeName: GoToMenu, Assembly-CSharp
+        m_MethodName: StartMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2136091894}
+        m_TargetAssemblyTypeName: ProgressBar, Assembly-CSharp
+        m_MethodName: StartProgressBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 52563585}
+        m_TargetAssemblyTypeName: GoToMenu, Assembly-CSharp
+        m_MethodName: CutOffMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2136091894}
+        m_TargetAssemblyTypeName: ProgressBar, Assembly-CSharp
+        m_MethodName: StopProgressBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Period: 0.1
+  HandModel: {fileID: 6203820390713528148}
+  FingerName: 1
+  PointingType: 3
+  PointingDirection: {x: 0, y: 0, z: 1}
+  TargetObject: {fileID: 52563583}
+  OnAngle: 23.1
+  OffAngle: 29.5
   ShowGizmos: 1
 --- !u!4 &4076338532857761
 Transform:
