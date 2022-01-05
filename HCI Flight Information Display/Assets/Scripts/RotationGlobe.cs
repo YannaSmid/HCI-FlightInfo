@@ -36,7 +36,7 @@ public class RotationGlobe : MonoBehaviour
         }
 
         HandposOld = HandposNew;
-        Debug.Log(HandposOld + "en" + HandposNew);
+        //Debug.Log(HandposOld + "en" + HandposNew);
         HandposNew = HandPalm.position;
         if (CanRotate){
             HandposDiff = HandposOld - HandposOld;

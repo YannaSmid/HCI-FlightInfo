@@ -64,9 +64,11 @@ namespace Leap.Unity {
     * @since 4.1.2
     */
     public virtual void Deactivate(){
-      if (IsActive) {
+      if (IsActive && this.gameObject != null) {
         _isActive = false;
         OnDeactivate.Invoke();
+      }else if (this.gameObject == null){
+        return;
       }
     }
 
