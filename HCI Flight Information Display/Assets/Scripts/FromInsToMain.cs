@@ -9,12 +9,20 @@ public class FromInsToMain : MonoBehaviour
     private float countdown;
     private bool isPointed = false;
 
+    //Selection handler keeps track of what gets selected
+    public GameObject SelHandlerObject;
+    private SelectionHandler SelHandler;
+
     public SpriteRenderer Icon;
     public Color SelectedColor;
     public Color DefaultColor;
 
 
     void Start(){
+        //saves the selectionhandler information into the selhandler variable
+        SelHandler = SelHandlerObject.GetComponent<SelectionHandler>();
+
+        //saves the route color when it is not selected
         DefaultColor = Icon.color;
     }
     void Update(){
@@ -29,6 +37,8 @@ public class FromInsToMain : MonoBehaviour
     }
     
     public void StartMenu(){
+        //button gets selected
+        SelHandler.ButtonSelection = true;
 
         isPointed = true;
         countdown = pointtime;
@@ -37,6 +47,8 @@ public class FromInsToMain : MonoBehaviour
     }
 
     public void CutOffMenu(){
+        //selection has stopped
+        SelHandler.ButtonSelection = false;
 
         isPointed = false;
         Icon.color = DefaultColor;

@@ -16,19 +16,8 @@ public class ProgressBar : MonoBehaviour
     private float timer;
 
 	
-	// Update is called once per frame
+
 	void Update () {
-
-        // if(inProgress)
-        // {
-    
-        //     if (currentValue < 100) {
-        //         currentValue += speed * Time.deltaTime;
-
-        //     } 
- 
-		//     LoadingBar.fillAmount = currentValue / 100;
-        // }
 
         if(inProgress)
         {
@@ -45,8 +34,8 @@ public class ProgressBar : MonoBehaviour
 
     public void StartProgressBar(){
 
-        //als er niet al een route is geselecteerd
-        if(!SelHandlerObject.RouteisSelected || SelHandlerObject.Deselecting){
+        //only if there has already been a route selected or a route needs to get deselected
+        if(!SelHandlerObject.RouteisSelected || SelHandlerObject.Deselecting || SelHandlerObject.ButtonSelection){
             currentValue = 0;
             timer = 0;
             ProgressImage.SetActive(true);

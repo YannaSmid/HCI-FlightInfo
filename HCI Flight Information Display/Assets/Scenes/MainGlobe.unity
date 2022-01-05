@@ -471,6 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointtime: 30
+  SelHandlerObject: {fileID: 710559155}
   Icon: {fileID: 52563584}
   SelectedColor: {r: 0.75686276, g: 1, b: 1, a: 1}
   DefaultColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1239,6 +1240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointtime: 20
+  SelHandlerObject: {fileID: 0}
   Icon: {fileID: 0}
   SelectedColor: {r: 0, g: 0, b: 0, a: 0}
   DefaultColor: {r: 0, g: 0, b: 0, a: 0}
@@ -2016,6 +2018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointtime: 30
+  SelHandlerObject: {fileID: 710559155}
   Icon: {fileID: 258909134}
   SelectedColor: {r: 0.58113205, g: 1, b: 0.827525, a: 1}
   DefaultColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4799,6 +4802,7 @@ MonoBehaviour:
   RouteisSelected: 0
   SelectingRoute: 0
   Deselecting: 0
+  ButtonSelection: 0
 --- !u!1 &726671797
 GameObject:
   m_ObjectHideFlags: 0
