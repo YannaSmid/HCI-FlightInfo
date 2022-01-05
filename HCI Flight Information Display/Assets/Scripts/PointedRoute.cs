@@ -20,9 +20,10 @@ public class PointedRoute : MonoBehaviour
 
     private float countdown;
     public float pointtime = 5f;
-    // Start is called before the first frame update
+
     void Start()
     {
+        //Selection Handler keeps track of the selected routes so that there cannot be more than one route selected at the same time
         SelChecker = SelHandlerObject.GetComponent<SelectionHandler>();
 
         RouteRenderer = GetComponent<Renderer>();
@@ -30,13 +31,12 @@ public class PointedRoute : MonoBehaviour
         DefaultColor = RouteRenderer.material.color;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (pointselect && countdown > 0f && !selected){
             countdown -= 1f;
         }
-        //selecteren
+        //select the route
         else if (pointselect && countdown <= 0f && !selected){
             selected = true;
             SelChecker.RouteisSelected = true;
@@ -46,7 +46,7 @@ public class PointedRoute : MonoBehaviour
         if (pointundo && countdown > 0f && selected){
             countdown -= 1f;
         }
-        //deselecteren
+        //deselect the route
         else if(pointundo && countdown <= 0f && selected){
             selected = false;
             SelChecker.RouteisSelected = false;
@@ -55,49 +55,32 @@ public class PointedRoute : MonoBehaviour
         }
     }
 
-    // public void Pointed(){
-    // //kan alleen geselecteerd worden als die nog niet geselecteerd is
-    //     if (!selected){
-    //         pointselect = true;
-    //         countdown = pointtime;
-    //         RouteRenderer.material.color = SelectedColor;
-    //         //Debug.Log("Pointed");
-    //     }
-    // //als die al geselecteerd is moet dat ongedaan gemaakt kunnen worden
-    //     else if (selected){
-    //         pointundo = true;
-    //         countdown = pointtime;
-    //         RouteRenderer.material.color = DefaultColor;
-    //         Debug.Log("Pointed");
-    //     }
-    // }
-
-     //als er niet ergens een route is geselecteerd
+     //gets called when the user points towards the route
     public void Pointed(){
-        //als er nog geen andere route is geselecteerd
+        //if there isn't a route that is selected
         if (!SelChecker.RouteisSelected && !SelChecker.SelectingRoute)
         {
-        //kan alleen geselecteerd worden als die nog niet geselecteerd is
+        //select the route if it is not already selected
             if (!selected)
             {
                 SelChecker.SelectingRoute = true;
                 pointselect = true;
                 countdown = pointtime;
                 RouteRenderer.material.color = SelectedColor;
-                //Debug.Log("Pointed");
             }
         }
-        //als route al geselecteerd is moet dat ongedaan gemaakt kunnen worden
+        //deselect the route if the route is selected
         if (selected)
             {
                 pointundo = true;
-                SelHandlerObject.Deselecting = true;//voor progress bar moet je ook bij deselecteren een bar krijgen
+                SelHandlerObject.Deselecting = true;
                 countdown = pointtime;
                 RouteRenderer.material.color = DefaultColor;
                 Debug.Log("Pointed");
             }
     }
 
+    //gets called when the user stops pointing towards the route
     public void NotPointed(){
         if (!selected){
             pointselect = false;
@@ -106,7 +89,7 @@ public class PointedRoute : MonoBehaviour
         }
         else if (selected){
             pointundo = false;
-            SelHandlerObject.Deselecting = false; //voor progress bar moet je ook bij deselecteren een bar krijgen
+            SelHandlerObject.Deselecting = false; 
             SelChecker.SelectingRoute = false;
             RouteRenderer.material.color = SelectedColor;
         }

@@ -11,11 +11,6 @@ public class DrawLineRenderer : MonoBehaviour
     public float vertexCount = 12;
     public float Point2Ypositio = 2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

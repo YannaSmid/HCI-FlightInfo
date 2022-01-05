@@ -19,11 +19,6 @@ public class RotationGlobe : MonoBehaviour
     public float speed = 1;
     Vector3 DefaultRotation = new Vector3(0,0,0);
 
-    // Start is called before the first frame update
-    void Start(){
-       
-       
-    }
 
     public void Update(){
         
@@ -36,15 +31,15 @@ public class RotationGlobe : MonoBehaviour
         }
 
         HandposOld = HandposNew;
-        Debug.Log(HandposOld + "en" + HandposNew);
         HandposNew = HandPalm.position;
         if (CanRotate){
             HandposDiff = HandposOld - HandposOld;
             HandposDiffx = HandposNew.x * 100f;
-            //Debug.Log(HandposDiffx);
             Globe.Rotate(0, 1f * Time.deltaTime * speed * HandposDiffx,0);
         }
     }
+
+    //this function gets called when 
     public void StartRotation(){
         CanRotate = true;
     }
