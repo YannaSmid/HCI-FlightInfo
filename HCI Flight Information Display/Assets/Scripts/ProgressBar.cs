@@ -24,8 +24,6 @@ public class ProgressBar : MonoBehaviour
     
             if (currentValue < 100 && timer <= pointtime) {
                 timer += 1f;
-
-                //currentValue needs to be equal to the pointing timer
                 currentValue = timer / pointtime;
 
             } 
